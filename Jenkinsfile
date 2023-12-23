@@ -59,6 +59,9 @@ echo done.'''
     }
 
     stage('Confirm Deploy to Staging') {
+          when {
+      branch 'master'
+    }
       steps {
         input(message: 'Deploy to Stage', ok: 'Yes ,Lets do it')
       }
